@@ -11,7 +11,7 @@ const Navbar = () => {
         <img
           src={mylogo}
           alt="Happy Trails"
-          className={`h-10 w-10 rounded-full mr-2 object-cover logo-rotate`}
+          className={`h-10 w-10 rounded-full mr-2 object-fill logo-rotate`}
         />
         Happy Trails
       </div>
