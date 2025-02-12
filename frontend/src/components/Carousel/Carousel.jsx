@@ -7,18 +7,33 @@ const Carousel = ({ autoSlide = true, slideInterval = 3000 }) => {
   const [slides, setSlides] = useState([
     {
       id: 1,
-      image: 'https://images.pexels.com/photos/355988/pexels-photo-355988.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/356830/pexels-photo-356830.jpeg',
       alt_text: 'Slide 1',
     },
     {
       id: 2,
-      image: 'https://images.pexels.com/photos/355988/pexels-photo-355988.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/588604/pexels-photo-588604.jpeg',
       alt_text: 'Slide 2',
     },
     {
       id: 3,
-      image: 'https://images.pexels.com/photos/210114/pexels-photo-210114.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+      image: 'https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg',
       alt_text: 'Slide 3',
+    },
+    {
+      id: 4,
+      image: 'https://images.pexels.com/photos/210114/pexels-photo-210114.jpeg',
+      alt_text: 'Slide 4',
+    },
+    {
+      id: 5,
+      image: 'https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg',
+      alt_text: 'Slide 5',
+    },
+    {
+      id: 6,
+      image: 'https://images.pexels.com/photos/2440079/pexels-photo-2440079.jpeg',
+      alt_text: 'Slide 6',
     },
   ]);
   const [loading, setLoading] = useState(false);

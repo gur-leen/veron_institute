@@ -1,66 +1,80 @@
-.navbar-animate {
-    animation: slideDown 0.5s ease-out forwards, gradient 3s ease infinite;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.logo-animate {
-    transition: transform 0.3s;
-}
-
-.logo-animate:hover {
-    transform: scale(1.1);
-}
-
-.menu-item::after {
-    content: "";
+header {
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-    transform: translateX(-50%);
-    transition: width 0.4s ease, background 0.4s ease;
-}
-
-.menu-item:hover::after {
     width: 100%;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.5) 100%);
-}
-
-.icon-custom-class {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.icon-custom-class:hover {
-    transform: scale(1.2) rotateX(10deg) rotateY(10deg);
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-}
-
-.icon-custom-class::before {
-    content: "";
-    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4));
-    transform: skewX(-10deg) skewY(-10deg) translateX(-1px) translateY(-1px);
-    opacity: 0;
-    transition: opacity 0.3s;
+    z-index: 10;
+    background: transparent;
 }
 
-.icon-custom-class:hover::before {
-    opacity: 1;
+@keyframes listItemHover {
+    0% {
+        transform: translateY(0);
+        color: #000;
+    }
+
+    50% {
+        transform: translateY(-5px);
+        color: #ff8c00;
+    }
+
+    100% {
+        transform: translateY(0);
+        color: #000;
+    }
 }
+
+.nav-links ul li {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li:hover {
+    animation: listItemHover 0.3s ease-in-out;
+}
+
+.nav-links ul li a {
+    position: relative;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    background: linear-gradient(to right, #ec4899, #ffb700);
+    color: white;
+    background-clip: text;
+}
+
+.nav-links ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #ffb700;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.button-hover {
+    background: linear-gradient(135deg, #ec4899, #ffb700);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    border-radius: 200%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
