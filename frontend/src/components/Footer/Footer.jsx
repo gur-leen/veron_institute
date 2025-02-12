@@ -1,83 +1,159 @@
-import { useState } from "react";
-import { FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaPinterest } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import "./footer.css";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
-export default function Footer() {
-  const [region, setRegion] = useState("India (English)");
+const Footer = () => {
+  const [categories, setCategories] = useState([
+    { id: 1, name: "Moodify" },
+  ]);
 
   return (
-    <footer className="bg-gradient-to-r from-pink-400 to-orange-300 animate-slidedown animate-gradient py-8 px-6 md:px-16">
-      {/* Acknowledgment of Country */}
-      <div className="border-b border-gray-500 pb-4">
-        <h3 className="text-lg font-semibold">Acknowledgement of Country</h3>
-        <p className="mt-2 text-sm">
-          We acknowledge the Traditional Aboriginal and Torres Strait Islander Owners of the land, 
-          sea and waters of the Australian continent, and recognise their custodianship of culture 
-          and Country for over 60,000 years.{" "}
-          <a href="#" className="text-blue-300 hover:underline">Read more →</a>
-        </p>
-      </div>
+    <footer className="bg-gradient-to-r from-pink-400 to-orange-300 text-white animate-slidedown animate-gradient">
+      <div className="relative">
+        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            {/* Column 1 */}
+            <div>
+              <h3 className="text-lg font-semibold text-center sm:text-left">
+                Subscribe to Our Newsletter
+              </h3>
+              <p className="mt-4 text-center sm:text-left">
+                Don’t miss any updates of our new products and exclusive offers!
+              </p>
+              <form className="mt-4 flex flex-col items-center sm:items-start space-y-3">
+                <input
+                  type="email"
+                  name="EMAIL"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Email"
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
 
-      {/* Region Selection & Social Media */}
-      <div className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-center">
-        {/* Region Selection */}
-        <div>
-          <label className="text-sm font-semibold">Change your region and language</label>
-          <div className="mt-2 bg-white text-black px-4 py-2 rounded-md cursor-pointer">
-            {region} ▼
+            {/* Column 2 */}
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg font-semibold">Categories</h3>
+              <ul className="mt-4 space-y-1">
+                {categories.slice(0, 15).map((category) => (
+                  <li key={category.id}>
+                    <a href="#" className="text-white text-sm hover:text-blue-500">
+                      {category.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3 */}
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg font-semibold">Useful Links</h3>
+              <ul className="mt-4 space-y-1">
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Terms & Conditions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Reporting
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Documentation
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Support Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Privacy
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4 */}
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg font-semibold">Our Services</h3>
+              <ul className="mt-4 space-y-1">
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Happy Trails
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Public Forums
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white text-sm hover:text-blue-500">
+                    Feedback
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 5 */}
+            <div className="text-center sm:text-left">
+              <div className="logo-container">
+                <h1 className="logo-text">
+                  Happy Trails
+                </h1>
+              </div>
+              <p className="text-sm mb-4">
+                Welcome to Happy Trails, your ultimate destination for travel recommendations based on your emotions.
+                Discover our accurate predictions and transform your travel experience into a joyful journey.
+              </p>
+              <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4">
+                <span className="text-sm"> happytrails.in@gmail.com</span>
+              </div>
+              <div className="flex items-center justify-center sm:justify-start space-x-2">
+                <FaPhone className="text-xl" />
+                <span className="text-sm">+918360103913</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Social Media Links */}
-        <div className="flex space-x-4 mt-6 md:mt-0">
-          <a href="#" aria-label="Facebook"><FaFacebook className="text-white hover:text-blue-400" /></a>
-          <a href="#" aria-label="YouTube"><FaYoutube className="text-white hover:text-red-400" /></a>
-          <a href="#" aria-label="Twitter"><FaTwitter className="text-white hover:text-blue-400" /></a>
-          <a href="#" aria-label="Instagram"><FaInstagram className="text-white hover:text-pink-400" /></a>
-          <a href="#" aria-label="Pinterest"><FaPinterest className="text-white hover:text-red-400" /></a>
-        </div>
-      </div>
-
-      {/* Footer Links */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* About this Site */}
-        <div>
-          <h4 className="font-semibold">About this site</h4>
-          <ul className="mt-2 space-y-1 text-sm">
-            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="#" className="hover:underline">Terms and Conditions</a></li>
-            <li><a href="#" className="hover:underline">Sitemap</a></li>
-          </ul>
-        </div>
-
-        {/* Other Sites */}
-        <div>
-          <h4 className="font-semibold">Other sites</h4>
-          <ul className="mt-2 space-y-1 text-sm">
-            <li><a href="#" className="hover:underline">Media & Industry</a></li>
-            <li><a href="#" className="hover:underline">Business Events</a></li>
-            <li><a href="#" className="hover:underline">Tourism Investment</a></li>
-          </ul>
-        </div>
-
-        {/* Copyright */}
-        <div className="text-sm text-gray-300">
-          <p>© Happy Trails 2025</p>
-        </div>
-      </div>
-
-      {/* Disclaimer */}
-      <div className="mt-8 text-xs text-gray-400">
-        <p>
-        *Product Disclaimer: Happy Trails provides travel destination recommendations based on 
-          AI-driven emotional analysis. While we strive to offer the best suggestions, these 
-          recommendations are generated algorithmically and may not always be accurate or suitable 
-          for all users. Travel preferences and emotional states vary, and we encourage users to 
-          conduct their own research before making travel plans. Happy Trails is not responsible 
-          for any bookings, travel arrangements, or third-party services listed on this website.
-        </p>
+        {/* Footer Bottom */}
+        <footer className={`flex justify-between items-center p-4 shadow-md bg-gradient-to-r from-pink-400 to-orange-300 animate-slidedown animate-gradient`}>
+          <div className="container mx-auto py-4 flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+            <p className="text-white text-center text-sm">
+              © Happy Trails Inc. 2025 All rights reserved.
+            </p>
+            <p className="text-white text-center text-sm">
+              Made with <span className="text-red-500">❤</span> By{" "}
+              <a
+                href="http://cakecounter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                Happy Trails Team
+              </a>
+            </p>
+          </div>
+        </footer>
       </div>
     </footer>
   );
-}
+};
 
+export default Footer;
 

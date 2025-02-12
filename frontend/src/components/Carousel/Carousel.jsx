@@ -7,17 +7,17 @@ const Carousel = ({ autoSlide = true, slideInterval = 3000 }) => {
   const [slides, setSlides] = useState([
     {
       id: 1,
-      image: 'https://media.cntraveler.com/photos/5e74f9de2e6ca30009d1d4fa/16:9/w_2560%2Cc_limit/Argentina-GettyImages-1146497849.jpg',
+      image: 'https://images.pexels.com/photos/355988/pexels-photo-355988.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       alt_text: 'Slide 1',
     },
     {
       id: 2,
-      image: 'https://images.goway.com/production/hero/iStock-1919241099.jpeg',
+      image: 'https://images.pexels.com/photos/355988/pexels-photo-355988.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       alt_text: 'Slide 2',
     },
     {
       id: 3,
-      image: 'https://www.itsholidaysltd.com/_next/image?url=%2Fimages%2Fblog%2Fwhat-is-the-difference-between-tour-and-travel.jpg&w=3840&q=100',
+      image: 'https://images.pexels.com/photos/210114/pexels-photo-210114.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
       alt_text: 'Slide 3',
     },
   ]);
