@@ -59,13 +59,10 @@ const Navbar = () => {
               <Link className="hover:text-blue-500 font-semibold" to="/">Home</Link>
             </li>
             <li>
-              <Link className="hover:text-blue-500 font-semibold" to="/">Recommendations</Link>
+              <Link className="hover:text-blue-500 font-semibold" to="/recommendation">Recommendations</Link>
             </li>
             <li>
-              <Link className="hover:text-blue-500 font-semibold" to="/">Travel Styles</Link>
-            </li>
-            <li>
-              <Link className="hover:text-blue-500 font-semibold" to="/">Destinations</Link>
+              <Link className="hover:text-blue-500 font-semibold" to="/community">Community</Link>
             </li>
             <li>
               <Link className="hover:text-blue-500 font-semibold" to="/feedback">Feedback</Link>
