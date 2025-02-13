@@ -24,8 +24,8 @@ const Feature_1 = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <p className="text-lg mb-4">
-            Happy Trails is a travel company based in South India. We specialize in organizing 
-            customized holidays in South India. Whether you are looking at a relaxed beach holiday, 
+            Happy Trails is a travel company based in North India. We specialize in organizing 
+            customized holidays in North India. Whether you are looking at a relaxed beach holiday, 
             an adventurous trip, a pilgrimage, or a corporate outing, we can help you plan the 
             perfect trip. We are a reputed and professionally managed company with well-trained 
             staff and coordinators. The team here strongly believes that our growth and customer 
